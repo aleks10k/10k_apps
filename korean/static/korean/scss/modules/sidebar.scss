@@ -1,0 +1,321 @@
+
+:root{
+
+    --side-btn-border-width:                1px;                   
+    --side-close-margin:                    0.5rem 2rem 0 0;
+    --side-close-font-size:                 2rem;
+    --side-close-width:                     2.5rem;
+    --side-close-height:                    2.5rem;
+    --side-header-font-size:                0.75rem;
+    --side-header-margin:                   0 0.5rem;
+    --side-header-paddig:                   0 0.5rem;
+    --side-text-s-font-size:                0.875rem;
+    --side-text-m-font-size:                1.125rem;
+    --side-text-l-font-size:                1.25rem;
+    --difficulty-padding:                   1rem 0.5rem;
+    --side-category-margin:                 0 0.5rem 0 0.5rem;  
+    --side-category-padding:                0.5rem;
+    --side-check-width:                     2.5rem;
+    --side-check-height:                    2.5rem;
+    --side-check-font-size:                 1.75rem;
+    --side-difficulty-btn-padding:          0.5rem;
+    --side-difficulty-btn-border-radius:    0.5rem;
+    --side-difficulty-btn-width:            30%;
+      
+    /* Borders */
+  
+    --border-as-divider:                    1px solid var(--color-11);
+  
+    /* Shadows and glow */
+  
+    --glow-radius:                          3rem;
+    --glow-white:                           6px 6px var(--glow-radius) var(--color-15);
+    --glow-green:                           6px 6px var(--glow-radius) var(--color-12);
+    --glow-orange:                          6px 6px var(--glow-radius) var(--color-14);
+    --glow-red:                             6px 6px var(--glow-radius) var(--color-13);
+  
+    @media (min-width: 600px) {
+            
+      --side-close-margin:                    0.5rem 1.25rem 0 0;
+      --side-close-font-size:                 1.5rem;
+      --side-close-width:                     2rem;
+      --side-close-height:                    2rem;
+      --side-text-s-font-size:                0.75rem;
+      --side-text-m-font-size:                0.875rem;
+      --side-text-l-font-size:                1rem;
+      --difficulty-padding:                   0.5rem 0.5rem;
+      --side-category-margin:                 0 0.25rem 0 0.25rem;  
+      --side-category-padding:                0.25rem;
+      --side-check-width:                     2rem;
+      --side-check-height:                    2rem;
+      --side-check-font-size:                 1.25rem;
+      --side-difficulty-btn-padding:          0.25rem;
+      --side-difficulty-btn-border-radius:    0.25rem;
+      --side-difficulty-btn-width:            30%;
+      --side-difficulty-btn-font-size:        0.875rem;
+    }
+  
+    @media (min-width: 768px) {
+  
+      --side-close-margin:                    1rem 1rem 0 0;
+      --side-close-font-size:                 2rem;
+      --side-close-width:                     2.5rem;
+      --side-close-height:                    2.5rem;
+      --side-header-font-size:                0.875rem;
+      --side-text-s-font-size:                1rem;
+      --side-text-m-font-size:                1.125rem;
+      --side-text-l-font-size:                1.25rem;
+      --difficulty-padding:                   1rem 1rem;
+      --side-category-margin:                 0 0.5rem 0 0.5rem;  
+      --side-category-padding:                0.5rem;
+      --side-check-width:                     2.5rem;
+      --side-check-height:                    2.5rem;
+      --side-check-font-size:                 2rem;
+      --side-difficulty-btn-padding:          0.5rem;
+      --side-difficulty-btn-border-radius:    0.5rem;
+      --side-difficulty-btn-width:            30%;
+      --side-difficulty-btn-font-size:        1rem;
+  }
+  
+  @media (min-width: 1200px) {
+  
+      --side-btn-border-width:                2px;     
+      --side-close-margin:                    1.5rem 1.5rem 0 0;
+      --side-close-font-size:                 2.5rem;
+      --side-close-width:                     2.875rem;
+      --side-close-height:                    2.875rem;
+      --side-header-font-size:                0.875rem;
+      --side-header-margin:                   0 0.75rem;
+      --side-header-paddig:                   0 0.75rem;
+      --side-text-s-font-size:                1rem;
+      --side-text-m-font-size:                1.25rem;
+      --side-text-l-font-size:                1.375rem;           
+      --difficulty-padding:                   1.25rem 1.25rem 1rem 1.25rem;           
+      --side-category-margin:                 0 1rem 0 1rem;  
+      --side-category-padding:                0.5rem;           
+      --side-check-width:                     2.75rem;
+      --side-check-height:                    2.75rem;
+      --side-check-font-size:                 2.25rem;
+      --side-difficulty-btn-padding:          0.5rem;
+      --side-difficulty-btn-border-radius:    0.5rem;
+      --side-difficulty-btn-width:            30%;
+      --side-difficulty-btn-font-size:        1.25rem;    
+    }
+      
+    @media (min-width: 1600px) {
+      
+      --side-close-margin:                    1rem 2rem 0 0;
+      --side-close-font-size:                 2.75rem;
+      --side-close-width:                     3.25rem;
+      --side-close-height:                    3.25rem;
+      --side-header-font-size:                1rem;
+      --side-header-margin:                   0 1rem;
+      --side-header-paddig:                   0 1rem;
+      --side-text-s-font-size:                1rem;
+      --side-text-m-font-size:                1.5rem;
+      --side-text-l-font-size:                1.75rem;
+      --difficulty-padding:                   1.25rem 1.25rem 1rem 1.25rem;
+      --side-category-margin:                 0 1rem 0 1rem;  
+      --side-category-padding:                0.5rem 1rem;
+      --side-check-width:                     3rem;
+      --side-check-height:                    3rem;
+      --side-check-font-size:                 2.5rem;
+      --side-difficulty-btn-padding:          0.5rem;
+      --side-difficulty-btn-border-radius:    0.5rem;
+      --side-difficulty-btn-width:            30%;
+      --side-difficulty-btn-font-size:        1.75rem;
+    }
+  
+    // @media (min-width: 1900px) {
+    // Edge had 1872px
+    @media (min-width: 1800px) {
+  
+      --side-btn-border-width:                3px;     
+      --side-close-margin:                    1rem 2rem 0 0;
+      --side-close-font-size:                 3.5rem;
+      --side-close-width:                     4rem;
+      --side-close-height:                    4rem;
+      --side-header-font-size:                1.5rem;
+      --side-header-margin:                   0 1.5rem;
+      --side-header-paddig:                   0 1.5rem;
+      --side-text-s-font-size:                1.5rem;
+      --side-text-m-font-size:                1.75rem;
+      --side-text-l-font-size:                2rem;
+      --difficulty-padding:                   2rem 1.5rem 2rem 1.5rem;
+      --side-category-margin:                 0 1.5rem 0 1.5rem;  
+      --side-category-padding:                0.5rem 1.5rem;
+      --side-check-width:                     3.5rem;
+      --side-check-height:                    3.5rem;
+      --side-check-font-size:                 3rem;
+      --side-difficulty-btn-padding:          0.5rem;
+      --side-difficulty-btn-border-radius:    0.5rem;
+      --side-difficulty-btn-width:            30%;
+      --side-difficulty-btn-font-size:        2.25rem;
+    }
+  }
+  
+  
+  /* || SIDEBAR.
+  ......................................................................................................................*/
+  
+  .sidebar {
+      display:          flex;
+      flex-direction:   column;
+      position:         fixed;
+      top:              0;
+      left:             0;
+      z-index:          1;
+      overflow-x:       hidden;
+      height:           100%;
+      width:            0;
+      padding:          0;
+      transition:       0.5s;
+      box-shadow:       12px 0 rgba(35, 35, 35, 0.6);
+      border-right:     0px solid var(--color-3);
+      background-color: var(--color-2);
+  }
+   
+  .sidebar__btn {
+      background-color:   transparent;
+      color:              var(--color-3);
+      border:             var(--side-btn-border);
+      transition:         var(--transition);
+  }
+  
+  @media (hover: hover) {
+      .sidebar__btn:hover {
+          transform:      var(--transform-translate-hover);
+      }
+  }
+  
+  .sidebar__btn:active {
+      transform:          var(--transform-translate-active);
+  }
+  
+  .sidebar__btn--close {
+      align-self:         flex-end;
+      flex-shrink:        0;            
+      padding:            0;
+      border-radius:      50%;
+      font-size:          var(--side-close-font-size);
+      margin:             var(--side-close-margin);
+      width:              var(--side-close-width);
+      height:             var(--side-close-height);
+  }
+   
+  .sidebar__text {
+      user-select:        none;
+      color:              var(--color-3);
+  }
+  
+  .sidebar__text--header {
+      border-bottom:      var(--border-as-divider);
+      font-size:          var(--side-header-font-size);
+      margin:             var(--side-header-margin);
+      padding:            var(--side-header-paddig);
+  }
+  
+  .sidebar__text--small {
+      font-size:          var(--side-text-s-font-size);
+  }
+    
+  .sidebar__text--medium {   
+      font-size:          var(--side-text-m-font-size);
+  }
+  
+  .sidebar__text--large {
+      font-size:          var(--side-text-l-font-size);
+  }
+  
+  .sidebar__text--warning {
+      max-width:          60%;
+      background-color:   var(--color-5);
+      color:              var(--color-1);
+  }
+  
+  .sidebar__difficulty {
+      display:            flex;
+      justify-content:    space-between;
+      padding:            var(--difficulty-padding);
+  }
+  
+  .sidebar__category {
+      display:            flex;
+      justify-content:    space-between;
+      padding:            var(--side-category-padding);
+      border-bottom:      var(--border-as-divider);
+      margin:             var(--side-category-margin);
+  }
+    
+  .sidebar__btn--check {
+      align-self:         center;
+      flex-shrink:        0;
+      padding:            0;
+      border-radius:      0.5rem;
+      width:              var(--side-check-width);
+      height:             var(--side-check-height);
+      font-size:          var(--side-check-font-size);
+      color:              var(--color-1);
+      border-color:       var(--color-1);
+      background-color:   var(--color-5);
+      box-shadow:         var(--glow-red);
+  }
+  
+  .sidebar__btn--difficulty {
+      padding:            var(--side-difficulty-btn-padding);
+      width:              var(--side-difficulty-btn-width);
+      border-radius:      var(--side-difficulty-btn-border-radius);
+      font-size:          var(--side-difficulty-btn-font-size);
+  }
+  
+  @media (hover: hover) {
+  
+      .sidebar__btn--white:hover {
+          color:              var(--color-1);
+          border-color:       var(--color-1);
+          box-shadow:         var(--glow-white);
+      }
+      
+      .sidebar__btn--green:hover {
+          color:              var(--color-1);
+          border-color:       var(--color-1);
+          background-color:   var(--color-6);
+          box-shadow:         var(--glow-green);
+      }
+  
+      .sidebar__btn--orange:hover {
+          color:              var(--color-1);
+          border-color:       var(--color-1);
+          background-color:   var(--color-8);
+          box-shadow:         var(--glow-orange);
+      }
+      
+      .sidebar__btn--red:hover {
+          color:              var(--color-1);
+          border-color:       var(--color-1);
+          background-color:   var(--color-5);
+          box-shadow:         var(--glow-red);
+      }
+  }
+  
+  .active--green {
+      color:              var(--color-1);
+      border-color:       var(--color-1);
+      background-color:   var(--color-6);
+      box-shadow:         var(--glow-green);
+  }
+  
+  .active--orange {
+      color:              var(--color-1);
+      border-color:       var(--color-1);
+      background-color:   var(--color-8);
+      box-shadow:         var(--glow-orange); 
+  }
+  
+  .active--red {
+      color:              var(--color-1);
+      border-color:       var(--color-1);
+      background-color:   var(--color-5);
+      box-shadow:         var(--glow-red);
+  }
+  

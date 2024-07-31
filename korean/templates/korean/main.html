@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META
+    ................................................................................................................ -->
+    <meta charset="utf-8">
+    <title>Korean</title>
+    <meta name="description" content="Korean reading learning app.">
+    <meta name="author" content="aleks_10k">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load static %}
+    {% csrf_token %}
+
+    <!-- FAVICON
+    ................................................................................................................ -->
+    <link rel="icon" href="{% static 'korean/images/favicon.png' %}" type="image/png">
+
+    <!-- FONTS
+    ................................................................................................................ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Play&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- CSS
+    ................................................................................................................ -->
+    <link rel="stylesheet" href="{% static 'korean/css/normalize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'korean/css/korean.min.css' %}">
+
+    <script src="{% static 'korean/js/dark.min.js' %}"></script>
+</head>
+
+<body>
+
+    <!-- Header
+    ................................................................................................................ -->
+    <header class="header">
+        <a class="header__link header__link--logo" href="{% url 'korean:main' %}">
+            <img class="header__img--logo" src="{% static 'korean/images/logo.png' %}">
+        </a>
+        <a class="header__link header__link--text" href="{% url 'home:home' %}">Home</a>
+        <a class="header__link header__link--text" href="{% url 'korean:batchims' %}">Batchims</a>
+    </header>
+
+    <!-- Settings
+    ................................................................................................................ -->
+    <section class="settings">
+        <button id="js-settings-btn" class="settings__btn material-symbols-outlined">settings</button>
+        <button id="js-color-scheme-btn" class="settings__btn material-symbols-outlined">emoji_objects</button>
+        <button id="js-mute-btn" class="settings__btn material-symbols-outlined">volume_up</button>
+    </section>
+
+    <!-- Tip
+    ................................................................................................................ -->
+    <section class="tip">
+        <span class="tip__text">Use</span>
+        <span class="tip__text material-symbols-outlined">settings</span>
+        <span class="tip__text">button to set the difficulty.</span>
+    </section>
+
+    <!-- Main
+    ................................................................................................................ -->
+    <section class="question">
+        <div id="js-question" class="question__text">&#160;</div>
+        <div class="question__answers">
+            <button id="js-option-1" class="question__option-btn">&#160;</button>
+            <button id="js-option-2" class="question__option-btn">&#160;</button>
+            <button id="js-option-3" class="question__option-btn">&#160;</button>
+            <button id="js-option-4" class="question__option-btn">&#160;</button>
+        </div>
+    </section>
+
+    <!-- Score
+    ................................................................................................................ -->
+    <section class="score">
+        <div id="js-score-text" class="score__text"></div>
+        <div class="score__progress-bar">
+            <div id="js-score-filler" class="score__filler"></div>
+        </div>
+            <button id="js-reset-score" class="score-reset__btn material-symbols-outlined">replay</button>
+    </section>
+
+    <!-- Sidebar
+    ................................................................................................................ -->
+    <section id="js-sidebar" class="sidebar">
+
+        <!-- Close button -->
+        <button id="js-close-side-btn" class="sidebar__btn sidebar__btn--close sidebar__btn--white material-symbols-outlined">clear</button>
+
+        <div class="sidebar__text sidebar__text--header">Difficulty</div>
+
+        <!-- Difficulty buttons -->
+        <div class="sidebar__difficulty">
+            <button id="js-easy-btn" class="sidebar__btn sidebar__btn--difficulty sidebar__btn--green">Easy</button>
+            <button id="js-medium-btn" class="sidebar__btn sidebar__btn--difficulty sidebar__btn--orange">Medium</button>
+            <button id="js-hard-btn" class="sidebar__btn sidebar__btn--difficulty sidebar__btn--red">Hard</button>
+        </div>
+
+        <div class="sidebar__text sidebar__text--header">Includes</div>
+
+        <!-- Easy parameters -->
+        <div id="js-easy-params">
+            <div class="sidebar__category">
+                <div>
+                    <div class="sidebar__text sidebar__text--large">Basic vowels</div>
+                    <div class="sidebar__text sidebar__text--small">ㅏ ㅑ ㅓ ㅕ ㅗ ㅛ ㅜ ㅠ ㅡ ㅣ</div>
+                </div>
+                <button id="js-letters-1-btn" class="sidebar__btn sidebar__btn--check material-symbols-outlined">clear</button>
+            </div>
+
+            <div class="sidebar__category">
+                <div>
+                    <div class="sidebar__text sidebar__text--large">Compound vowels</div>
+                    <div class="sidebar__text sidebar__text--small">ㅐ ㅒ ㅔ ㅖ ㅘ ㅙ ㅚ ㅝ ㅞ ㅟ ㅢ</div>
+                </div>
+                <button id="js-letters-2-btn" class="sidebar__btn sidebar__btn--check material-symbols-outlined">clear</button>
+            </div>
+
+            <div class="sidebar__category">
+                <div>
+                    <div class="sidebar__text sidebar__text--large">Basic consonants</div>
+                    <div class="sidebar__text sidebar__text--small">ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ ㅅ ㅇ ㅈ ㅊ ㅋ ㅌ ㅍ ㅎ</div>
+                </div>
+                <button id="js-letters-3-btn" class="sidebar__btn sidebar__btn--check material-symbols-outlined">clear</button>
+            </div>
+
+            <div class="sidebar__category">
+                <div>
+                    <div class="sidebar__text sidebar__text--large">Compound consonants</div>
+                    <div class="sidebar__text sidebar__text--small">ㄲ ㄸ ㅃ ㅆ ㅉ</div>
+                </div>
+                <button id="js-letters-4-btn" class="sidebar__btn sidebar__btn--check material-symbols-outlined">clear</button>
+            </div>
+        </div>
+
+        <!-- Medium parameters -->
+        <div id="js-medium-params">
+            <div class="sidebar__category">
+                <div>
+                    <div class="sidebar__text sidebar__text--medium">Basic consonants +</div>
+                    <div class="sidebar__text sidebar__text--medium">basic vowels</div>
+                    <div class="sidebar__text sidebar__text--small">syllables from 가 to 히</div>
+                </div>
+                <button id="js-syllables-1-btn" class="sidebar__btn sidebar__btn--check material-symbols-outlined">clear</button>
+            </div>
+
+            <div class="sidebar__category">
+                <div>
+                    <div class="sidebar__text sidebar__text--medium">Basic consonants +</div>
+                    <div class="sidebar__text sidebar__text--medium">compound vowels</div>
+                    <div class="sidebar__text sidebar__text--small">syllables from 개 to 희</div>
+                </div>
+                <button id="js-syllables-2-btn" class="sidebar__btn sidebar__btn--check material-symbols-outlined">clear</button>
+            </div>
+
+            <div class="sidebar__category">
+                <div>
+                    <div class="sidebar__text sidebar__text--medium">Compound consonants +</div>
+                    <div class="sidebar__text sidebar__text--medium">basic vowels</div>
+                    <div class="sidebar__text sidebar__text--small">syllables from 까 to 찌</div>
+                </div>
+                <button id="js-syllables-3-btn" class="sidebar__btn sidebar__btn--check material-symbols-outlined">clear</button>
+            </div>
+
+            <div class="sidebar__category">
+                <div>
+                    <div class="sidebar__text sidebar__text--medium">Compound consonants +</div>
+                    <div class="sidebar__text sidebar__text--medium">compound vowels</div>
+                    <div class="sidebar__text sidebar__text--small">syllables from 깨 to 쯰</div>
+                </div>
+                <button id="js-syllables-4-btn" class="sidebar__btn sidebar__btn--check material-symbols-outlined">clear</button>
+            </div>
+        </div>
+
+        <!-- Hard parameters -->
+        <div id="js-hard-params">
+            <div class="sidebar__category">
+                <div>
+                    <div class="sidebar__text sidebar__text--large">Random syllables that are of I+M+F composition,</div>
+                    <div class="sidebar__text sidebar__text--large">e.g., 쟨 껅 븼 etc.</div>
+                    <br>
+                    <div class="sidebar__text sidebar__text--medium">If this one is too hard for you, learn <a class="sidebar__text" href="{% url 'korean:batchims' %}">batchims.</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apply button -->
+        <div class="sidebar__difficulty">
+            <div id="js-side-warning" class="sidebar__text sidebar__text--small sidebar__text--warning"></div>
+            <button id="js-apply-btn" class="sidebar__btn sidebar__btn--difficulty sidebar__btn--white">APPLY</button>
+        </div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT
+    ................................................................................................................ -->
+    <script src="{% static 'korean/js/script.min.js' %}"></script>
+
+</body>
+</html>

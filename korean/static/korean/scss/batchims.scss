@@ -1,0 +1,15 @@
+
+@import 'modules/header';
+@import 'modules/main';
+@import 'modules/sidebar';
+
+
+:root {
+    --color-3: #e78fb3;
+    --color-11: #e78fb380;
+}
+
+:root[data-scheme="dark"] {
+    --shadow-color: #4c3e55;
+    --btn-bg-color-hover: #4c3e55;
+}

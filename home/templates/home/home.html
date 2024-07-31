@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META
+    ................................................................................................................ -->
+    <meta charset="utf-8">
+    <title>10k apps</title>
+    <meta name="description" content="Learning apps.">
+    <meta name="author" content="aleks_10k">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load static %}
+    {% csrf_token %}
+
+    <!-- FAVICON
+    ................................................................................................................ -->
+    <link rel="icon" href="{% static 'home/images/favicon.ico' %}" type="image/ico">
+
+    <!-- FONTS
+    ................................................................................................................ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+
+    <!-- CSS
+    ................................................................................................................ -->
+    <link rel="stylesheet" href="{% static 'home/css/normalize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css/home.min.css' %}">
+
+</head>
+<body>
+
+    <div class="banner">
+        <div class="banner__text">Page under&#160;&#160;</div>
+        <div class="banner__text">constructio<span class="blink">n</span></div>
+    </div>
+
+    <div class="container">
+
+        <div class="apps">
+
+            <div class="app">
+                <a class="app__link" href="{% url 'korean:main' %}">Korean</a>
+                <div class="app__description">Helps to learn korean letters, syllables and batchims.</div>
+                <div class="slides">
+                    <button class="slides__prev" data-prev-btn="korean">&#10094;</button>
+                    <div class="slides__slide" data-slide="korean">
+                        <img src="{% static 'home/images/kor-d.png' %}" alt="" class="slides__img">
+                    </div>
+                    <div class="slides__slide" data-slide="korean">
+                        <img src="{% static 'home/images/kor-p.png' %}" alt="" class="slides__img">
+                    </div>
+                    <button class="slides__next" data-next-btn="korean">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="app">
+                <a class="app__link" href="#">Answer</a>
+                <div class="app__description">Helps to learn anything with custom quizzes creation.</div>
+                <div class="slides">
+                    <button class="slides__prev" data-prev-btn="answer">&#10094;</button>
+                    <div class="slides__slide" data-slide="answer">
+                        <img src="{% static 'home/images/ans-d.png' %}" alt="" class="slides__img">
+                    </div>
+                    <div class="slides__slide" data-slide="answer">
+                        <img src="{% static 'home/images/ans-d2.png' %}" alt="" class="slides__img">
+                    </div>
+                    <div class="slides__slide" data-slide="answer">
+                        <img src="{% static 'home/images/ans-d3.png' %}" alt="" class="slides__img">
+                    </div>
+                    <div class="slides__slide" data-slide="answer">
+                        <img src="{% static 'home/images/ans-d4.png' %}" alt="" class="slides__img">
+                    </div>
+                    <button class="slides__next" data-next-btn="answer">&#10095;</button>
+                </div>
+                <div class="app__description app__description--red">TEMPORARY UNAVAILABLE.</div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT
+    ................................................................................................................ -->
+    <script>
+        class SlideShow{constructor(e){this.slideNumber=1,this.title=e,this.slides=document.querySelectorAll(
+        `[data-slide="${e}"]`),this.slideNextBtn=document.querySelector(`[data-prev-btn=${e}]`),this.slidePrevBtn=
+        document.querySelector(`[data-next-btn=${e}]`),this.show(this.slideNumber),this.addListeners()}addListeners(){
+        this.slidePrevBtn.addEventListener("click",(()=>{this.change(1)})),this.slideNextBtn.addEventListener("click",
+        (()=>{this.change(-1)}))}show(e){e>this.slides.length&&(this.slideNumber=1),e<1&&(this.slideNumber=this.slides
+        .length);for(let e=0;e<this.slides.length;e++)this.slides[e].style.display="none";this.slides[this.slideNumber-1]
+        .style.display="block"}change(e){this.show(this.slideNumber+=e)}}slidesKorean=new SlideShow("korean"),
+        slidesAnswer=new SlideShow("answer");
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+$banner-bg-color:     black;
+$banner-color:        white;
+$banner-color:        lime;
+// $banner-text-shadow:    1px 0px 0px purple, 0 0 6px $banner-color;
+$banner-text-shadow:    1px 0px 0px purple;
+
+@keyframes blink {
+
+    50% {
+        background-color:   $banner-color;
+        color:              $banner-bg-color;
+        box-shadow:         $banner-text-shadow;
+    }
+}
+
+.blink {
+    padding-left:   3px;
+    animation:      blink 2s step-start 0s infinite;
+}
+
+.banner {
+    display:            flex;
+    flex-direction:     column;
+    gap:                1rem;
+    text-align:         center;
+    padding:            2rem 0;
+    background-color:   $banner-bg-color;    
+
+    @media (min-width: 600px) {
+
+        padding:        1rem 0;
+    }
+    @media (min-width: 768px) {
+
+        padding:        2rem 0;
+    }
+}
+
+.banner__text {
+    user-select:        none;
+    font-family:        "Press Start 2P", system-ui;
+    font-size:          1.5rem;
+    color:              $banner-color;
+    text-shadow:        $banner-text-shadow;
+
+    @media (min-width: 600px) {
+
+        font-size:      1rem;
+    }
+
+    @media (min-width: 768px) {
+
+        font-size:      3rem;
+    }
+}

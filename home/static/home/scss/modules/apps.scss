@@ -1,0 +1,145 @@
+
+$color-1w:                      #ffffff;
+$color-2y:                      #f9bc60;
+$color-3r:                      #f45d48;
+$color-4g:                      #00000026;
+
+$app-link-color:                $color-1w;
+$app-link-bg-color:             $color-2y;
+$app-link-border-color:         $color-2y;
+$app-link-bg-color-hover:       $color-1w;
+$app-link-color-hover:          $color-2y;
+$app-descr-red-color:           $color-3r;
+$slides-btn-bg-color-hover:     $color-4g;
+$slides-btn-color-hover:        $color-1w;
+$slides-btn-bg-color-active:    $color-2y;
+$slides-btn-color-active:       $color-1w;
+
+.container {
+    user-select:    none;
+    background:     transparent;
+    margin:         0 auto;
+    max-width:      98%;
+   
+    @media (min-width: 1200px) {
+
+        max-width:  84%;
+    }
+    @media (min-width: 1600px) {
+
+        max-width:  74%;
+    }
+    @media (min-width: 1800px) {
+
+        max-width:  64%;
+    }
+}
+
+.apps {
+    display:            flex;
+    flex-direction:     column;
+    gap:                2rem;
+    margin-top:         1rem;
+
+    @media (min-width: 600px) {
+
+        flex-direction: row;
+    }
+    @media (min-width: 768px) {
+
+        flex-direction: column;
+    }
+    @media (min-width: 992px) {
+
+        flex-direction: row;
+    }
+}
+
+.apps:last-child {
+    padding-bottom:     1rem;
+}
+
+.app {
+    display:            flex;
+    flex-direction:     column;
+    gap:                0.75rem;
+    
+}
+
+.app__link {
+    text-decoration:        none;
+    align-self:             center;
+    font-family:            "Roboto", sans-serif;
+    font-size:              1.5rem;
+    padding:                0.5rem 1rem;
+    border-radius:          0.5rem;
+    border:                 1px solid $app-link-border-color;
+    background-color:       $app-link-bg-color;
+    color:                  $app-link-color;
+
+    &:hover {
+        background-color:   $app-link-bg-color-hover;
+        color:              $app-link-color-hover;
+    }
+}
+
+.app__description {
+    font-family:            "Roboto", sans-serif;
+
+    @media (min-width: 768px) {
+
+        text-indent:        1.75rem;
+    }
+}
+
+.app__description--red {
+    align-self:             center;
+    color:                  $app-descr-red-color;
+
+    @media (min-width: 768px) {
+
+        font-size:          1.5rem;
+    }
+    @media (min-width: 992px) {
+
+        font-size:          1rem;
+    }
+}
+
+.slides {
+    display:                flex;
+    flex-direction:         row;
+    /* The following removes a couple of 
+    transparent pixels below the image. */
+    line-height:            0; 
+}
+
+.slides__slide {
+    display:                none;
+}
+
+.slides__img {
+    max-width:              100%;
+}
+
+.slides__prev,
+.slides__next {
+    background-color:       transparent;
+    font-weight:            bold;
+    border:                 none;
+    padding:                0 0.5rem;
+    font-size:              1.5rem;
+
+    @media (hover: hover) {
+    
+        &:hover {
+            background-color:   $slides-btn-bg-color-hover;
+            color:              $slides-btn-color-hover;
+        }
+    }
+    
+    &:active {
+        background-color:       $slides-btn-bg-color-active;
+        color:                  $slides-btn-color-active;
+    }
+}

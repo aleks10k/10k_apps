@@ -1,0 +1,13 @@
+
+$bg-color:            #ffffff;
+
+* {
+    box-sizing:       border-box;
+}
+
+body {
+    background-color: $bg-color;
+}
+
+@import 'modules/banner';
+@import 'modules/apps';

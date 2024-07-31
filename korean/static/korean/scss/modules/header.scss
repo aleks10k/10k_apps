@@ -1,0 +1,104 @@
+
+:root {
+
+    /* Colors */
+  
+    --header-bg-color:        var(--color-2);
+    --header-font-color:      var(--color-1);
+  
+    /* Dimensions */
+    --header-img-width:       48px;
+    --header-img-height:      48px;
+    --header-padding-v:       2px;
+    --header-padding-h:       2px;
+  
+    @media (min-width: 600px) {
+      --header-padding-v:     2px;
+      --header-padding-h:     var(--header-img-width);
+    } 
+  
+    @media (min-width: 768px) {
+      --header-img-width:     60px;
+      --header-img-height:    60px;
+    }
+  
+    @media (min-width: 1200px) {
+      --header-img-width:     48px;
+      --header-img-height:    48px;
+    }
+  
+    @media (min-width: 1600px) {
+      --header-img-width:     78px;
+      --header-img-height:    78px;
+      --header-padding-v:     4px;
+    } 
+  }
+  
+  :root[data-scheme="dark"] {
+  
+    --header-bg-color:   var(--color-9);
+  }
+  
+  .header {
+    background-color: var(--header-bg-color);
+    padding:          var(--header-padding-v) var(--header-padding-h);
+    font-family:      var(--header-font);
+    color:            var(--header-font-color);
+    display:          flex;
+    align-items:      center;
+    gap:              0.75rem;
+  
+    @media (min-width: 768px) {
+      gap:            1.5rem;
+    }
+  }
+  
+  .header__link {
+    text-decoration:  none;
+  }
+  
+  .header__link--logo {
+    user-select:      none;
+    /* The following removes a couple of 
+    transparent pixels below the image. */
+    line-height:      0; 
+  }
+  
+  .header__img--logo {
+    width:            var(--header-img-width);
+    height:           var(--header-img-height);
+  }
+  
+  .header__link--text {
+    user-select:      none;
+    font-size:        1rem;
+    line-height:      1;
+    /* The following is for letting 
+    a link be scaled with scale(). */
+    display:          inline-block;   
+    color:            var(--header-font-color);
+    transition:       var(--transition);
+    
+    @media (min-width: 768px) {
+      font-size:        1.25rem;
+    }
+  
+    @media (min-width: 1200px) {
+      font-size:        1rem;
+    }
+  
+    @media (min-width: 1600px) {
+      font-size:        1.25rem;
+    }
+  }
+  
+  @media (hover: hover) {
+    .header__link--text:hover {
+      transform:      scale(1.2, 1.2);
+    }
+  }
+  
+  .header__link--text:active {
+    color:            var(--color-3);
+  }
+  

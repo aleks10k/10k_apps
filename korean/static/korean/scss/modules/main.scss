@@ -68,7 +68,8 @@
       --reset-font-size:            1rem; 
     }
   
-    @media (min-width: 768px) {
+    // @media (min-width: 768px) {
+    @media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
   
       --settings-font-size:         3rem;
       --settings-btn-width:         3.75rem;
@@ -156,9 +157,10 @@
   --question-shadow:        6px 6px var(--shadow-color);
   --shadow:                 4px 4px var(--shadow-color);
   --shadow-hover:           8px 8px var(--shadow-color-hover);
-  --shadow-active:          2px 2px var(--shadow-color-active);
-  
-  @media (min-width: 768px) {
+  --shadow-active:          2px 2px var(--shadow-color-active);  
+
+  // @media (min-width: 768px) {
+    @media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
   
     --question-shadow:      8px 8px var(--shadow-color);
     --shadow:               6px 6px var(--shadow-color);
@@ -188,256 +190,289 @@
     --option-btn-border-radius:     0.5rem;
     --progress-bar-border:          var(--progress-border-width) solid var(--progress-border-color);
     --side-btn-border:              var(--side-btn-border-width) solid var(--color-3);
-  }
+}
   
-  :root[data-scheme="dark"] {
-      
-    --bg-color:               var(--color-2);
-    --btn-border-color:       var(--color-1);
-    --btn-bg-color:           var(--color-2);
-    --btn-font-color:         var(--color-1);
-    --btn-bg-color-hover:     var(--color-7);
-    --tip-color:              var(--color-11);
-    --score-font-color:       var(--color-1);
-    --progress-bg-color:      var(--color-2);
-    --shadow-color:           var(--color-7);
-    --shadow-color-hover:   rgba(200, 193, 214, 0.15);
-    --shadow-color-active:  rgba(200, 193, 214, 0.5);
-  }
-  
-  
-  /* || GENERAL.
-  ......................................................................................................................*/
-  
-  * {
-      box-sizing: border-box;
-  }
-  
-  body {
-      background-color: var(--bg-color);
-      font-family:      'Play', sans-serif;
-  }
-  
-  .material-symbols-outlined {
+:root[data-scheme="dark"] {
     
-    font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24;
+  --bg-color:               var(--color-2);
+  --btn-border-color:       var(--color-1);
+  --btn-bg-color:           var(--color-2);
+  --btn-font-color:         var(--color-1);
+  --btn-bg-color-hover:     var(--color-7);
+  --tip-color:              var(--color-11);
+  --score-font-color:       var(--color-1);
+  --progress-bg-color:      var(--color-2);
+  --shadow-color:           var(--color-7);
+  --shadow-color-hover:   rgba(200, 193, 214, 0.15);
+  --shadow-color-active:  rgba(200, 193, 214, 0.5);
+}
+  
+
+
+/* || GENERAL.
+......................................................................................................................*/
+  
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    background-color: var(--bg-color);
+    font-family:      'Play', sans-serif;
+}
+
+.material-symbols-outlined {
+  
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+}
+
+@media (max-width: 1200px) {
+
+  a,
+  button {
+    -webkit-tap-highlight-color: #00000000;
   }
-  
-  
-  /* || SETTINGS.
-  ......................................................................................................................*/
-  
-  .settings {
-    display:          flex;
-    justify-content:  end;
-    flex-direction:   row-reverse;
-    position:         fixed;
-    top:              2px;
-    right:            2px;
-    padding-top:      var(--settings-padding);
-    gap:              var(--settings-gap);
-  
-    @media (min-width: 600px) {
-  
-      justify-content:  center;
-      flex-direction:   row;
-    }
-  
-    @media (min-width: 768px) {
-  
-      position:         static;
-    }
+}
+
+
+/* || SETTINGS.
+......................................................................................................................*/
+
+.settings {
+  display:          flex;
+  justify-content:  end;
+  flex-direction:   row-reverse;
+  position:         fixed;
+  top:              2px;
+  right:            2px;
+  padding-top:      var(--settings-padding);
+  gap:              var(--settings-gap);
+
+  @media (min-width: 600px) {
+
+    justify-content:  center;
+    flex-direction:   row;
   }
-  
-  .settings__btn {
-    background:         none;
-    border:             none;
-    color:              var(--color-1);      
-    font-size:          var(--settings-font-size);                  
-    transition:         var(--transition);
-    padding:            0;  /* This makes icon-font be centered inside round buttons in other than Mozilla browsers. */
-  
-    @media (min-width: 768px) {
-  
-      border-radius:    50%;
-      background-color: var(--btn-bg-color);
-      color:            var(--btn-font-color);
-      border:           var(--btn-border);
-      width:            var(--settings-btn-width);
-      height:           var(--settings-btn-height);
-      box-shadow:       var(--shadow);
-    }
+
+  // @media (min-width: 768px) {
+  @media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
+
+    position:         static;
   }
-  
-  @media (hover: hover) {
-  
-    .settings__btn:hover {
-      background-color: var(--btn-bg-color-hover);
-      transform: var(--transform-translate-hover);
-      box-shadow: var(--shadow-hover);
-    }
+}
+
+.settings__btn {
+  background:         none;
+  border:             none;
+  color:              var(--color-1);      
+  font-size:          var(--settings-font-size);                  
+  transition:         var(--transition);
+  padding:            0;  /* This makes icon-font be centered inside round buttons in other than Mozilla browsers. */
+
+  // @media (min-width: 768px) {
+  @media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
+
+    border-radius:    50%;
+    background-color: var(--btn-bg-color);
+    color:            var(--btn-font-color);
+    border:           var(--btn-border);
+    width:            var(--settings-btn-width);
+    height:           var(--settings-btn-height);
+    box-shadow:       var(--shadow);
   }
-  
-  .settings__btn:active {
-    transform: var(--transform-translate-active);
+}
+
+// @media (hover: hover) {   
+@media (min-width: 1200px) {
+
+  .settings__btn:hover {
+    background-color: var(--btn-bg-color-hover);
+    transform: var(--transform-translate-hover);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+// @media (min-width: 1200px) {
+
+//   .settings__btn:hover {
+//     background-color: var(--btn-bg-color-hover);
+//     transform: var(--transform-translate-hover);
+//     box-shadow: var(--shadow-hover);
+//   }
+// }
+
+.settings__btn:active {
+  transform: var(--transform-translate-active);
+
+  // @media (min-width: 768px) {
+  @media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
     box-shadow: var(--shadow-active);
   }
-  
-  
-  
-  /* || TIP.
-  ......................................................................................................................*/
-  
-  .tip {
-    display:            flex;
-    justify-content:    center;
-    gap:                0.25rem;
-    padding-top:        var(--tip-padding);
+}
+
+
+
+/* || TIP.
+......................................................................................................................*/
+
+.tip {
+  display:            flex;
+  justify-content:    center;
+  gap:                0.25rem;
+  padding-top:        var(--tip-padding);
+}
+
+.tip__text {
+  user-select:        none;
+  align-self:         center;
+  color:              var(--tip-color);
+  font-size:          var(--tip-font-size);
+}
+
+
+/* || QUESTION.
+......................................................................................................................*/
+
+.question {
+  display:            flex;
+  justify-content:    center;
+  flex-direction:     column;
+  padding-top:        var(--question-padding);
+
+  @media (min-width: 600px) {
+
+    flex-direction:   row;
   }
+}
+
+.question__text {
+  user-select:        none;
+  overflow-y:         hidden;
+  text-align:         center;
+  // font-weight:        900;
+  font-weight:        500;
+  line-height:        1.1;
+  font-size:          var(--question-font-size);
+  color:              var(--question-color);
+  text-shadow:        var(--question-shadow);  
   
-  .tip__text {
-    user-select:        none;
-    align-self:         center;
-    color:              var(--tip-color);
-    font-size:          var(--tip-font-size);
+  @media (min-width: 600px) {
+
+    text-align:       right;
+    flex-basis:       50%;
+    padding-right:    1rem;
   }
+
+  @media (min-width: 1200px) {
+
+      font-weight:    900;
+  }
+
+}
+
+.question__answers {
+  display:            flex;
+  flex-direction:     column;
+  flex-basis:         50%;
+  gap:                var(--option-gap);
+
+  @media (min-width: 600px) {
+
+    padding-left:     2rem;
+    justify-content:  center;
+  }
+}
+
+.question__option-btn {
+  align-self:         center;
+  width:              var(--option-width);
+  padding:            var(--option-btn-padding);
+  font-size:          var(--option-font-size);
+  border:             var(--btn-border);
+  border-radius:      var(--option-btn-border-radius);
+  background-color:   var(--btn-bg-color);
+  color:              var(--btn-font-color);
+  box-shadow:         var(--shadow);
+  transition:         var(--transition);
+
+  @media (min-width: 600px) {
+
+    align-self:       start;
+  }
+}
+
+// @media (hover: hover) {
+@media (min-width: 1200px) {
+
+  .question__option-btn:hover {
+    background-color: var(--btn-bg-color-hover);
+    transform:        var(--transform-translate-hover);
+    box-shadow:       var(--shadow-hover);
+  }
+}
+
+.question__option-btn:active {
+  transform:          var(--transform-translate-active);
+  box-shadow:         var(--shadow-active);
+}
+
+
+/* || SCORE.
+......................................................................................................................*/
+
+.score {
+  display:          flex;
+  flex-direction:   column;
+  align-items:      center;
+  margin-top:       var(--score-margin);
+  gap:              var(--score-gap);
+  background-color: var(--score-bar-color);
+  padding:          var(--score-padding);
+}
+
+.score__text {
+  user-select:      none;
+  font-size:        var(--score-font-size);
+  color:            var(--score-font-color);
+}
+
+.score__progress-bar {
+  display:          inline-block;
+  border-radius:    0.5rem;
+  width:            var(--progress-width);
+  height:           var(--progress-height);
+  background-color: var(--progress-bg-color);
+  border:           var(--progress-bar-border);
+}
+
+.score__filler {
+  height:           100%;
+  border-radius:    0.5rem;
+  transition:       var(--transition);
+  background-color: var(--score-filler-color);
+}
+
+.score-reset__btn {
+  padding:          0; /* This makes icon-font be centered inside round buttons in other than Mozilla browsers. */
+  background-color: transparent;
+  border:           none;
+  font-size:        var(--reset-font-size); 
+  color:            var(--btn-font-color);
+  transition:       var(--transition);
   
-  
-  /* || QUESTION.
-  ......................................................................................................................*/
-  
-  .question {
-    display:            flex;
-    justify-content:    center;
-    flex-direction:     column;
-    padding-top:        var(--question-padding);
-  
-    @media (min-width: 600px) {
-  
-      flex-direction:   row;
+  // @media (hover: hover) {
+  @media (min-width: 1200px) {
+
+    &:hover {
+      transform:    var(--transform-scale-hover);
     }
   }
-  
-  .question__text {
-    user-select:        none;
-    overflow-y:         hidden;
-    text-align:         center;
-    font-weight:        900;
-    line-height:        1.1;
-    font-size:          var(--question-font-size);
-    color:              var(--question-color);
-    text-shadow:        var(--question-shadow);  
-    
-    @media (min-width: 600px) {
-  
-      text-align:       right;
-      flex-basis:       50%;
-      padding-right:    1rem;
-    }
+
+  &:active {
+    transform:      var(--transform-scale-active);
   }
-  
-  .question__answers {
-    display:            flex;
-    flex-direction:     column;
-    flex-basis:         50%;
-    gap:                var(--option-gap);
-  
-    @media (min-width: 600px) {
-  
-      padding-left:     2rem;
-      justify-content:  center;
-    }
-  }
-  
-  .question__option-btn {
-    align-self:         center;
-    width:              var(--option-width);
-    padding:            var(--option-btn-padding);
-    font-size:          var(--option-font-size);
-    border:             var(--btn-border);
-    border-radius:      var(--option-btn-border-radius);
-    background-color:   var(--btn-bg-color);
-    color:              var(--btn-font-color);
-    box-shadow:         var(--shadow);
-    transition:         var(--transition);
-  
-    @media (min-width: 600px) {
-  
-      align-self:       start;
-    }
-  }
-  
-  @media (hover: hover) {
-  
-    .question__option-btn:hover {
-      background-color: var(--btn-bg-color-hover);
-      transform:        var(--transform-translate-hover);
-      box-shadow:       var(--shadow-hover);
-    }
-  }
-  
-  .question__option-btn:active {
-    transform:          var(--transform-translate-active);
-    box-shadow:         var(--shadow-active);
-  }
-  
-  
-  /* || SCORE.
-  ......................................................................................................................*/
-  
-  .score {
-    display:          flex;
-    flex-direction:   column;
-    align-items:      center;
-    margin-top:       var(--score-margin);
-    gap:              var(--score-gap);
-    background-color: var(--score-bar-color);
-    padding:          var(--score-padding);
-  }
-  
-  .score__text {
-    user-select:      none;
-    font-size:        var(--score-font-size);
-    color:            var(--score-font-color);
-  }
-  
-  .score__progress-bar {
-    display:          inline-block;
-    border-radius:    0.5rem;
-    width:            var(--progress-width);
-    height:           var(--progress-height);
-    background-color: var(--progress-bg-color);
-    border:           var(--progress-bar-border);
-  }
-  
-  .score__filler {
-    height:           100%;
-    border-radius:    0.5rem;
-    transition:       var(--transition);
-    background-color: var(--score-filler-color);
-  }
-  
-  .score-reset__btn {
-    padding:          0; /* This makes icon-font be centered inside round buttons in other than Mozilla browsers. */
-    background-color: transparent;
-    border:           none;
-    font-size:        var(--reset-font-size); 
-    color:            var(--btn-font-color);
-    transition:       var(--transition);
-    
-    @media (hover: hover) {
-  
-      &:hover {
-        transform:    var(--transform-scale-hover);
-      }
-    }
-  
-    &:active {
-      transform:      var(--transform-scale-active);
-    }
-  }
-  
+}

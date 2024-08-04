@@ -15,6 +15,14 @@ $slides-btn-color-hover:        $color-1w;
 $slides-btn-bg-color-active:    $color-2y;
 $slides-btn-color-active:       $color-1w;
 
+@media (max-width: 1200px) {
+
+    a,
+    button {
+      -webkit-tap-highlight-color: #00000000;
+    }
+  }
+
 .container {
     user-select:    none;
     background:     transparent;
@@ -45,7 +53,13 @@ $slides-btn-color-active:       $color-1w;
 
         flex-direction: row;
     }
-    @media (min-width: 768px) {
+
+    // @media (min-width: 800px) and (orientation: portrait) {       // NEW
+    //     flex-direction: column;
+    // }
+
+    // @media (min-width: 768px) {
+    @media (min-width: 800px) {
 
         flex-direction: column;
     }
@@ -77,16 +91,26 @@ $slides-btn-color-active:       $color-1w;
     background-color:       $app-link-bg-color;
     color:                  $app-link-color;
 
-    &:hover {
+    @media (min-width: 1200px) {
+
+        &:hover {
+          background-color:   $app-link-bg-color-hover;
+          color:              $app-link-color-hover;
+        }
+    }
+
+    &:active {
         background-color:   $app-link-bg-color-hover;
         color:              $app-link-color-hover;
-    }
+      }
+
 }
 
 .app__description {
     font-family:            "Roboto", sans-serif;
 
-    @media (min-width: 768px) {
+    // @media (min-width: 768px) {
+    @media (min-width: 800px) {
 
         text-indent:        1.75rem;
     }
@@ -96,7 +120,8 @@ $slides-btn-color-active:       $color-1w;
     align-self:             center;
     color:                  $app-descr-red-color;
 
-    @media (min-width: 768px) {
+    // @media (min-width: 768px) {
+    @media (min-width: 800px) {
 
         font-size:          1.5rem;
     }
@@ -130,7 +155,8 @@ $slides-btn-color-active:       $color-1w;
     padding:                0 0.5rem;
     font-size:              1.5rem;
 
-    @media (hover: hover) {
+    // @media (hover: hover) {
+    @media (min-width: 1200px) {
     
         &:hover {
             background-color:   $slides-btn-bg-color-hover;

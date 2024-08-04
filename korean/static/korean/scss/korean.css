@@ -14,7 +14,7 @@
     --header-padding-h: var(--header-img-width);
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
   :root {
     --header-img-width: 60px;
     --header-img-height: 60px;
@@ -47,7 +47,7 @@
   align-items: center;
   gap: 0.75rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
   .header {
     gap: 1.5rem;
   }
@@ -83,7 +83,7 @@
   color: var(--header-font-color);
   transition: var(--transition);
 }
-@media (min-width: 768px) {
+@media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
   .header__link--text {
     font-size: 1.25rem;
   }
@@ -99,7 +99,7 @@
   }
 }
 
-@media (hover: hover) {
+@media (min-width: 1200px) {
   .header__link--text:hover {
     transform: scale(1.2, 1.2);
   }
@@ -189,7 +189,7 @@
     --reset-font-size: 1rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
   :root {
     --settings-font-size: 3rem;
     --settings-btn-width: 3.75rem;
@@ -270,7 +270,7 @@
     --reset-font-size: 1.5rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
   :root {
     --question-shadow: 8px 8px var(--shadow-color);
     --shadow: 6px 6px var(--shadow-color);
@@ -315,6 +315,12 @@ body {
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
+@media (max-width: 1200px) {
+  a,
+  button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+}
 /* || SETTINGS.
 ......................................................................................................................*/
 .settings {
@@ -333,7 +339,7 @@ body {
     flex-direction: row;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
   .settings {
     position: static;
   }
@@ -347,7 +353,7 @@ body {
   transition: var(--transition);
   padding: 0; /* This makes icon-font be centered inside round buttons in other than Mozilla browsers. */
 }
-@media (min-width: 768px) {
+@media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
   .settings__btn {
     border-radius: 50%;
     background-color: var(--btn-bg-color);
@@ -359,7 +365,7 @@ body {
   }
 }
 
-@media (hover: hover) {
+@media (min-width: 1200px) {
   .settings__btn:hover {
     background-color: var(--btn-bg-color-hover);
     transform: var(--transform-translate-hover);
@@ -368,7 +374,11 @@ body {
 }
 .settings__btn:active {
   transform: var(--transform-translate-active);
-  box-shadow: var(--shadow-active);
+}
+@media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
+  .settings__btn:active {
+    box-shadow: var(--shadow-active);
+  }
 }
 
 /* || TIP.
@@ -409,7 +419,7 @@ body {
           user-select: none;
   overflow-y: hidden;
   text-align: center;
-  font-weight: 900;
+  font-weight: 500;
   line-height: 1.1;
   font-size: var(--question-font-size);
   color: var(--question-color);
@@ -420,6 +430,11 @@ body {
     text-align: right;
     flex-basis: 50%;
     padding-right: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .question__text {
+    font-weight: 900;
   }
 }
 
@@ -454,7 +469,7 @@ body {
   }
 }
 
-@media (hover: hover) {
+@media (min-width: 1200px) {
   .question__option-btn:hover {
     background-color: var(--btn-bg-color-hover);
     transform: var(--transform-translate-hover);
@@ -510,7 +525,7 @@ body {
   color: var(--btn-font-color);
   transition: var(--transition);
 }
-@media (hover: hover) {
+@media (min-width: 1200px) {
   .score-reset__btn:hover {
     transform: var(--transform-scale-hover);
   }
@@ -570,7 +585,7 @@ body {
     --side-difficulty-btn-font-size: 0.875rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 800px) or ((min-width: 768px) and (orientation: portrait)) {
   :root {
     --side-close-margin: 1rem 1rem 0 0;
     --side-close-font-size: 2rem;
@@ -693,7 +708,7 @@ body {
   transition: var(--transition);
 }
 
-@media (hover: hover) {
+@media (min-width: 1200px) {
   .sidebar__btn:hover {
     transform: var(--transform-translate-hover);
   }
@@ -780,7 +795,7 @@ body {
   font-size: var(--side-difficulty-btn-font-size);
 }
 
-@media (hover: hover) {
+@media (min-width: 1200px) {
   .sidebar__btn--white:hover {
     color: var(--color-1);
     border-color: var(--color-1);

@@ -10,4 +10,5 @@ urlpatterns = [
 
     path('', views.HomePage.as_view(), name='home'),
 
+    path('answer/', views.AnswerRedirect.as_view(), name='answer')
 ]
